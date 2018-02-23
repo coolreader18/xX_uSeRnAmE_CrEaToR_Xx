@@ -1,6 +1,6 @@
 /* @legume
  * @name script
- * @script jquery
+ * @script npm:jquery
  * @style style.css
  */
 var $ = require("jquery");
