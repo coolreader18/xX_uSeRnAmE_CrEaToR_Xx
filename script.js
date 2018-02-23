@@ -1,8 +1,8 @@
 /* @legume
-* @name script
-* @script npm:jquery
-* @style style.css
-*/
+ * @name script
+ * @script npm:jquery
+ * @style style.css
+ */
 var $ = require("jquery");
 $("#input").on("input", gen)
 function gen() {
