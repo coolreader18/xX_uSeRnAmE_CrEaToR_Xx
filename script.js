@@ -4,6 +4,7 @@
  * @style style.css
  */
 var $ = require("jquery");
+var switched = false;
 $("#input").on("input", gen)
 function gen() {
   var arr = Array.from($("#input").val().replace(/\s/g, "_").toLowerCase());
