@@ -1,19 +1,28 @@
 /* @legume
  * @name script
- * @script npm:jquery
- * @style style.css
+ * @script npm:stdio.js/build/stdio-primer.min.js as stdio
  */
-var $ = require("jquery");
-var switched = false;
-$("#input").on("input", gen)
-function gen() {
-  var arr = Array.from($("#input").val().replace(/\s/g, "_").toLowerCase());
-  for (var i = switched ? 0 : 1; i < arr.length; i+=2) {
-    arr[i] = arr[i].toUpperCase();
+stdio.loadStyleSheet().add(
+  {
+    type: "textInput",
+    name: "input"
+  },
+  {
+    type: "checkbox",
+    name: "cap",
+    label: "Switch Capitilization",
+    options: [""]
+  },
+  {
+    type: "output",
+    link: "input",
+    transform: function(inp) {
+      var switched = true;
+      var arr = Array.from(inp.replace(/\s/g, "_").toLowerCase());
+      for (var i = switched ? 0 : 1; i < arr.length; i+=2) {
+        arr[i] = arr[i].toUpperCase();
+      }
+      return "xX_" + arr.join("") + "_Xx";
+    }
   }
-  $("#output").text("xX_" + arr.join("") + "_Xx");
-}
-$("#switch").change(function() {
-  switched = this.checked;
-  gen();
-})
+)
