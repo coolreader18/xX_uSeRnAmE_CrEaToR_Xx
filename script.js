@@ -8,10 +8,9 @@ stdio.loadStyleSheet().add(
     name: "input"
   },
   {
-    type: "checkbox",
+    type: "switch",
     name: "cap",
-    label: "Switch Capitilization",
-    options: [""]
+    label: "Switch Capitilization"
   },
   {
     type: "output",
