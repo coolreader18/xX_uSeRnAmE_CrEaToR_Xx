@@ -2,7 +2,8 @@
  * @name script
  * @require npm:stdio.js@0.1.5/build/stdio-primer.min.js as stdio
  */
-stdio.loadStyleSheet().add(
+
+stdio.loadStyleSheet().title("xX_uSeRnAmE_CrEaToR_Xx").add(
   {
     type: "textInput",
     name: "input"
