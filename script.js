@@ -1,6 +1,6 @@
 /* @legume
  * @name script
- * @script npm:stdio.js/build/stdio-primer.min.js as stdio
+ * @require npm:stdio.js/build/stdio-primer.min.js as stdio
  */
 stdio.loadStyleSheet().add(
   {
