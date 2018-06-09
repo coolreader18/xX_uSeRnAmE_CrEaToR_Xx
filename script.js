@@ -1,6 +1,6 @@
 /* @legume
  * @name script
- * @require npm:stdio.js/build/stdio-primer.min.js as stdio
+ * @require npm:stdio.js@0.1.5/build/stdio-primer.min.js as stdio
  */
 stdio.loadStyleSheet().add(
   {
@@ -14,11 +14,10 @@ stdio.loadStyleSheet().add(
   },
   {
     type: "output",
-    link: "input",
-    transform: function(inp) {
+    transform: function(scope) {
       var switched = true;
-      var arr = Array.from(inp.replace(/\s/g, "_").toLowerCase());
-      for (var i = switched ? 0 : 1; i < arr.length; i+=2) {
+      var arr = Array.from(scope.input.replace(/\s/g, "_").toLowerCase());
+      for (var i = scope.cap ? 0 : 1; i < arr.length; i+=2) {
         arr[i] = arr[i].toUpperCase();
       }
       return "xX_" + arr.join("") + "_Xx";
